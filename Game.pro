@@ -1,8 +1,3 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2015-03-17T19:52:34
-#
-#-------------------------------------------------
 
 QT       += core gui
 
@@ -13,8 +8,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+        dialog.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+            dialog.h
 
 FORMS    += mainwindow.ui \
+            dialog.ui
+
