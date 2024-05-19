@@ -29,7 +29,7 @@ private slots:
 
 private:
 
-    void showDialog();
+    void showDialog(); // Показать окно меню
     void Generate(); // Генерация элементов игры
     void up(); // Движение вверх
     void down();

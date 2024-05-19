@@ -33,37 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     //scoreLabel->setStyleSheet("QLabel { background-color: #edca64; color: white; font: 18pt; font-weight: bold; border: 2px solid #5e3370; padding: 10px; border-radius: 10px; }");
     grid->addWidget(scoreLabel, 0, 3); // Добавление метки счета в сетку
 
-
-    // centralWidget = new QWidget(this); // Создание центрального виджета
-    // this->setCentralWidget(centralWidget); // Установка центрального виджета для главного окна
-    // grid = new QGridLayout(centralWidget); // Создание сетки размещения виджетов
-
-    // // Заголовок "2048"
-    // title = new QLabel("2048", this);
-    // title->setAlignment(Qt::AlignCenter);
-    // title->setStyleSheet("QLabel { color: #2c3e50; font: 20pt; font-weight: bold; margin-bottom: 20px; }");
-    // grid->addWidget(title, 0, 0);
-
-    // // Надпись "Game"
-    // title2 = new QLabel("Game", this);
-    // title2->setAlignment(Qt::AlignCenter);
-    // title2->setStyleSheet("QLabel { color: #2c3e50; font: 20pt; font-weight: bold; margin-bottom: 20px; }");
-    // grid->addWidget(title2, 0, 1);
-
-    // // Кнопка "New Game"
-    // newGame = new QPushButton("New Game", this);
-    // newGame->setStyleSheet("QPushButton { background-color: #27ae60; color: white; font: 18pt; font-weight: bold; border-radius: 10px; padding: 10px 20px; }"
-    //                        "QPushButton:hover { background-color: #2ecc71; }"); // Эффект при наведении
-    // QObject::connect(newGame, SIGNAL(clicked()), this, SLOT(Init()));
-    // grid->addWidget(newGame, 0, 2);
-
-    // // Метка для отображения счета
-    // scoreLabel = new QLabel("Score: 0", this);
-    // scoreLabel->setAlignment(Qt::AlignCenter);
-    // scoreLabel->setStyleSheet("QLabel { background-color: #2980b9; color: white; font: 18pt; font-weight: bold; border-radius: 10px; padding: 10px; }");
-    // grid->addWidget(scoreLabel, 0, 3);
-
-
     // Создание и расстановка меток для игрового поля
     for (int i = 0; i < 4; ++i)
         for (int j = 0; j < 4; ++j) {
@@ -150,7 +119,6 @@ void MainWindow::showDialog() {
     connect(dialog, &Dialog::continueGame, this, &MainWindow::Init); // Продолжить игру
     connect(dialog, &Dialog::exitGame, this, &MainWindow::close); // Закрыть приложение
 }
-
 
 
 void MainWindow::changeColor(int i, int j)
@@ -278,11 +246,11 @@ void MainWindow::down() {
 
 void MainWindow::up() {
     // Функция для движения элементов игры вверх
-    rotate(); // Поворот игрового поля на 180 градусов
-    rotate(); // Повторный поворот игрового поля на 180 градусов
+    rotate(); // Поворот игрового поля
+    rotate(); // Повторный поворот игрового поля
     down(); // Вызов функции движения элементов игры вниз
-    rotate(); // Поворот игрового поля на 180 градусов
-    rotate(); // Повторный поворот игрового поля на 180 градусов
+    rotate(); // Поворот игрового поля
+    rotate(); // Повторный поворот игрового поля
 }
 
 void MainWindow::left() {
